@@ -36,8 +36,8 @@ cat >/tmp/job-execution-policy.json <<EOL
             "Resource": [
               "arn:aws:s3:::${S3TEST_BUCKET}",
               "arn:aws:s3:::${S3TEST_BUCKET}/*",
-              "arn:aws:s3:::blogpost-sparkoneks-us-east-1/blog/BLOG_TPCDS-TEST-3T-partitioned/*",
-              "arn:aws:s3:::blogpost-sparkoneks-us-east-1"
+              "arn:aws:s3:::spark-operator-doeks-spark-logs-20250219081011868600000007",
+              "arn:aws:s3:::spark-operator-doeks-spark-logs-20250219081011868600000007/*"
             ]
         }, 
         {

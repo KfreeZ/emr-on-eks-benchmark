@@ -3,7 +3,7 @@
 apiVersion: "sparkoperator.k8s.io/v1beta2"
 kind: SparkApplication
 metadata:
-  name: tpcds-data-generation-3t
+  name: tpcds-data-generation-1g
   namespace: oss
 spec:
   type: Scala
@@ -15,13 +15,13 @@ spec:
   mainApplicationFile: local:///opt/spark/examples/jars/eks-spark-benchmark-assembly-1.0.jar
   arguments:
   # TPC-DS data localtion
-    - "s3://$(BUCKET_PARAM)/BLOG_TPCDS-TEST-3T-partitioned"
+    - "s3://kfz-blogpost-sparkoneks/blog/BLOG_TPCDS-TEST-1G-partitioned"
   # Path to kit in the docker image
     - "/opt/tpcds-kit/tools"
   # Data Format
     - "parquet"
   # Scale factor (in GB)
-    - "3000"
+    - "1"
   # Generate data num partitions
     - "200"
   # Create the partitioned fact tables
