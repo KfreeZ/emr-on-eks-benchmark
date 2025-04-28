@@ -94,7 +94,7 @@ object BenchmarkSQL {
       callUDF("min", col("executionSeconds").cast("double")).as('minRuntimeSeconds),
       callUDF("max", col("executionSeconds").cast("double")).as('maxRuntimeSeconds)
     ).orderBy(col("queryName"))
-    aggResults.repartition(1).write.csv(s"$resultPath/summary.csv")
+    aggResults.repartition(1).write.parquet(s"$resultPath/summary.csv")
     aggResults.show(10)
 
     spark.stop()
